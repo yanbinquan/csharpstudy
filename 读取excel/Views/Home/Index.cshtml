@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+}
+
+<div>
+    <script type="text/ecmascript">
+        function f_ReadExcel() {
+            //$("#btnYes")[0].disabled = true;
+            var filePath = $("#txtFile")[0].value;
+            if (filePath == "" || filePath == null || filePath == "undefined") {
+                alert("请选择一个Excel文档");
+                return;
+            }
+            var oXL = new ActiveXObject("Excel.application");
+            var oWB = oXL.Workbooks.open(filePath);
+            oWB.worksheets(1).select();
+            var oSheet = oWB.ActiveSheet;
+            try {
+                var count = $("#count")[0];
+                var i = parseInt(count.value);
+                var j = 2;
+                if (i == 1) {
+                    if ($("#txtEnglishName" + i)[0].value == "") {
+                        --i;
+                    }
+                }
+                while (true) {
+                    if (oSheet.Cells(j, 1).value == undefined || oSheet.Cells(j, 3).value == undefined || oSheet.Cells(j, 6).value == undefined) {
+                        break;
+                    }
+                    f_AddRow();
+                    i++;
+                    $("#txtLoadingDate" + i)[0].value = f_ToDate(oSheet.Cells(j, 1).value);
+                    $("#txtPONumber" + i)[0].value = oSheet.Cells(j, 2).value == undefined ? "" : oSheet.Cells(j, 2).value;
+                    $("#txtEnglishName" + i)[0].value = oSheet.Cells(j, 3).value;
+                    $("#txtProductName" + i)[0].value = oSheet.Cells(j, 4).value == undefined ? "" : oSheet.Cells(j, 4).value;
+                    $("#txtISBN" + i)[0].value = oSheet.Cells(j, 5).value == undefined ? "" : oSheet.Cells(j, 5).value;
+                    $("#txtQuantity" + i)[0].value = oSheet.Cells(j, 6).value;
+                    $("#txtQtyPerCarton" + i)[0].value = oSheet.Cells(j, 7).value == undefined ? 0 : oSheet.Cells(j, 7).value;
+                    $("#txtCarton" + i)[0].value = oSheet.Cells(j, 8).value == undefined ? 0 : oSheet.Cells(j, 8).value;
+                    $("#txtCtnPerCrate" + i)[0].value = oSheet.Cells(j, 9).value == undefined ? 0 : oSheet.Cells(j, 9).value;
+                    $("#txtCrate" + i)[0].value = oSheet.Cells(j, 10).value == undefined ? 0 : oSheet.Cells(j, 10).value;
+                    $("#txtCW" + i)[0].value = oSheet.Cells(j, 11).value == undefined ? 0 : oSheet.Cells(j, 11).value;
+                    $("#txtCtnSize" + i)[0].value = oSheet.Cells(j, 12).value == undefined ? "" : oSheet.Cells(j, 12).value;
+                    $("#txtProductSize" + i)[0].value = oSheet.Cells(j, 13).value == undefined ? "" : oSheet.Cells(j, 13).value;
+                    $("#txtCrSize" + i)[0].value = oSheet.Cells(j, 14).value == undefined ? "" : oSheet.Cells(j, 14).value;
+                    $("#txtTailSize" + i)[0].value = oSheet.Cells(j, 15).value == undefined ? "" : oSheet.Cells(j, 15).value;
+                    $("#txtVolume" + i)[0].value = oSheet.Cells(j, 16).value == undefined ? 0 : f_Round(oSheet.Cells(j, 16).value, 2);
+                    $("#txtNWPerCarton" + i)[0].value = oSheet.Cells(j, 17).value == undefined ? 0 : f_Round(oSheet.Cells(j, 17).value, 2);
+                    $("#txtGWPerCarton" + i)[0].value = oSheet.Cells(j, 18).value == undefined ? 0 : f_Round(oSheet.Cells(j, 18).value, 2);
+                    $("#txtNWT" + i)[0].value = oSheet.Cells(j, 19).value == undefined ? 0 : f_Round(oSheet.Cells(j, 19).value, 2);
+                    $("#txtGWT" + i)[0].value = oSheet.Cells(j, 20).value == undefined ? 0 : f_Round(oSheet.Cells(j, 20).value, 2);
+                    $("#txtUnitPrice" + i)[0].value = oSheet.Cells(j, 21).value == undefined ? 0 : f_Round(oSheet.Cells(j, 21).value, 4);
+                    $("#txtAmount" + i)[0].value = oSheet.Cells(j, 22).value == undefined ? 0 : f_Round(oSheet.Cells(j, 22).value, 2);
+                    $("#txtRemark" + i)[0].value = oSheet.Cells(j, 23).value == undefined ? "" : oSheet.Cells(j, 23).value;
+                    j++;
+                }
+                setTimeout(f_AutoCalSum, 500);
+                $("#btnNo")[0].click();
+            } catch (e) {
+                $("#btnNo")[0].click();
+            }
+            oXL.Quit();
+            CollectGarbage();
+        }
+    </script>
+    <input type="button" value="点击" onclick=" f_ReadExcel() "  />
+    <input type="file" id="txtFile" />
+</div>
