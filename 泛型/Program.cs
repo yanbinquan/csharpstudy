@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace 泛型
 {
@@ -21,40 +22,37 @@ namespace 泛型
         {
             public static T Max<T>(T first, params T[] values) where T : IComparable<T> //CompareTo必须为IComparable
             {
-                T maximum = first;
-                foreach (T item in values)
+                T[] maximum = {first};
+                foreach (var item in values.Where(item => item.CompareTo(maximum[0]) > 0))
                 {
-                    if (item.CompareTo(maximum) > 0)
-                    {
-                        maximum = item;
-                    }
+                    maximum[0] = item;
                 }
-                return maximum;
+                return maximum[0];
             }
         }
 
         public struct Pair<T> : IPair<T>
         {
-            private T _First;
+            private T _first;
 
-            private T _Second;
+            private T _second;
 
             public Pair(T first)
             {
-                _First = first;
-                _Second = default(T);
+                _first = first;
+                _second = default(T);
             }
 
             public T First
             {
-                get { return _First; }
-                set { _First = value; }
+                get { return _first; }
+                set { _first = value; }
             }
 
             public T Second
             {
-                get { return _Second; }
-                set { _Second = value; }
+                get { return _second; }
+                set { _second = value; }
             }
         }
     }

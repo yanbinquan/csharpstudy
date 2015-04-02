@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace 反射
@@ -7,26 +8,26 @@ namespace 反射
     {
         private static void Main(string[] args)
         {
-            //GetProperties();
-            //TRef();
+            GetProperties();
+            Console.WriteLine("========分割线========");
+            Ref();
             Console.Read();
         }
 
         public static void GetProperties()
         {
             var dt = new DateTime();
-            Type type = dt.GetType(); //GetType()，获得与原始对象对应的System.Type的一个实例
+            var type = dt.GetType(); //GetType()，获得与原始对象对应的System.Type的一个实例
 
-            foreach (PropertyInfo item in type.GetProperties()) //获取属性
+            foreach (var item in type.GetProperties().OrderBy(p=>p.GetType().Name)) //获取属性
             {
                 Console.WriteLine(item.Name);
             }
         }
 
-        public static void TRef()
+        public static void Ref()
         {
-            Type type;
-            type = typeof (Nullable<>);
+            var type = typeof (Nullable<>);
             Console.WriteLine(type.ContainsGenericParameters);
             Console.WriteLine(type.IsGenericType); //是否泛型
 
@@ -39,7 +40,7 @@ namespace 反射
         {
             public void Add(T i)
             {
-                Type t = typeof (T);
+                var t = typeof (T);
             }
         }
     }

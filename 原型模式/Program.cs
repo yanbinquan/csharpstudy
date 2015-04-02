@@ -11,11 +11,14 @@ namespace 原型模式
             MonkeyKingPrototype prototypeMonkeyKing = new ConcretePrototype(1);
             // 变一个
             MonkeyKingPrototype cloneMonkeyKing = prototypeMonkeyKing.Clone() as ConcretePrototype;
-            Console.WriteLine("Cloned1:" + cloneMonkeyKing.Id);
+            if (cloneMonkeyKing != null) Console.WriteLine("Cloned1:" + cloneMonkeyKing.Id);
             // 变两个
             MonkeyKingPrototype cloneMonkeyKing2 = prototypeMonkeyKing.Clone() as ConcretePrototype;
-            cloneMonkeyKing2.Id += 1;
-            Console.WriteLine("Cloned2:" + cloneMonkeyKing2.Id);
+            if (cloneMonkeyKing2 != null)
+            {
+                cloneMonkeyKing2.Id += 1;
+                Console.WriteLine("Cloned2:" + cloneMonkeyKing2.Id);
+            }
 
             Console.ReadLine();
         }
@@ -26,7 +29,7 @@ namespace 原型模式
     /// </summary>
     public abstract class MonkeyKingPrototype
     {
-        public MonkeyKingPrototype(int id)
+        protected MonkeyKingPrototype(int id)
         {
             Id = id;
         }
@@ -54,7 +57,7 @@ namespace 原型模式
         public override MonkeyKingPrototype Clone()
         {
             // 调用MemberwiseClone方法实现的是浅拷贝，另外还有深拷贝
-            return (MonkeyKingPrototype) MemberwiseClone();
+            return (MonkeyKingPrototype)MemberwiseClone();
         }
     }
 }
