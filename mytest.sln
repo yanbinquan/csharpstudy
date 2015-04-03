@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "二叉树", "二叉树\二�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ref和Out", "Ref和Out\Ref和Out.csproj", "{5CF5C376-4C2F-429B-A059-A45D1A1112BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "小实验", "小实验", "{58683543-67BD-4953-976F-02712A63F7C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "return和finally", "return和finally\return和finally.csproj", "{391F727D-FE81-487F-B92E-AD5CDBC2FBA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{5CF5C376-4C2F-429B-A059-A45D1A1112BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CF5C376-4C2F-429B-A059-A45D1A1112BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CF5C376-4C2F-429B-A059-A45D1A1112BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391F727D-FE81-487F-B92E-AD5CDBC2FBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391F727D-FE81-487F-B92E-AD5CDBC2FBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391F727D-FE81-487F-B92E-AD5CDBC2FBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391F727D-FE81-487F-B92E-AD5CDBC2FBA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,5 +123,6 @@ Global
 		{943DFD92-871F-4E89-94FD-633C7D9FD509} = {8359A10B-2921-4F4A-B666-4E984E5123D9}
 		{40FD2485-79E6-40C9-AEC0-38D7E46C7121} = {48F59283-CB94-4C15-91AF-F9AD697DE934}
 		{6DE576F4-74DF-4673-9342-7AFD608FE120} = {D63579A1-EF21-49B2-AAFD-71E95F1C79C3}
+		{391F727D-FE81-487F-B92E-AD5CDBC2FBA7} = {58683543-67BD-4953-976F-02712A63F7C2}
 	EndGlobalSection
 EndGlobal
