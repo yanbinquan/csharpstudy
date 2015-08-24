@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace 二叉树
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             var rootNode = BinTree();
 
@@ -74,6 +71,7 @@ namespace 二叉树
             PreOrde(rootNode.LNode);
             PreOrde(rootNode.RNode);
         }
+
         /// <summary>
         /// 中序遍历（先访问左节点->在访问跟节点->在访问右孩子）递归
         /// </summary>
@@ -86,6 +84,7 @@ namespace 二叉树
             Console.Write("{0} ", rootNode.Data);
             InOrde(rootNode.RNode);
         }
+
         /// <summary>
         /// 后序遍历（先访问左节点->在访问右节点->在访问跟孩子）递归
         /// </summary>
@@ -99,6 +98,7 @@ namespace 二叉树
             Console.Write("{0} ", rootNode.Data);
         }
     }
+
     //节点类
     public class Node<T>
     {
@@ -117,12 +117,6 @@ namespace 二叉树
         /// </summary>
         public Node<T> RNode { get; set; }
 
-        /// <summary>
-        /// 无参构造函数
-        /// </summary>
-        public Node()
-        {
-        }
         /// <summary>
         /// 节点构造函数
         /// </summary>

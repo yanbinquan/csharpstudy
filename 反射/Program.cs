@@ -19,7 +19,7 @@ namespace 反射
             var dt = new DateTime();
             var type = dt.GetType(); //GetType()，获得与原始对象对应的System.Type的一个实例
 
-            foreach (var item in type.GetProperties().OrderBy(p=>p.GetType().Name)) //获取属性
+            foreach (var item in type.GetProperties().OrderBy(p => p.GetType().Name)) //获取属性
             {
                 Console.WriteLine(item.Name);
             }

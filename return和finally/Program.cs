@@ -11,10 +11,9 @@ namespace return和finally
     ///2.执行jsr指令跳到finally语句里执行
     ///3.执行完finally语句后，返回之前保存在局部变量表里的值
     /// </summary>
-    
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var y = aaa();
             Console.WriteLine(y);
@@ -30,7 +29,6 @@ namespace return和finally
             }
             catch (Exception e)
             {
-
             }
             finally
             {

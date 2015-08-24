@@ -61,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lamda表达式", "Lamda表�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "生成动态查询", "生成动态查询\生成动态查询.csproj", "{20ED22A8-AC98-4A71-949A-60B9E6F8BB17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "枚举与位运算", "枚举与位运算\枚举与位运算.csproj", "{258DEBB3-3820-4038-A85E-4A5CF63A22B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{20ED22A8-AC98-4A71-949A-60B9E6F8BB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20ED22A8-AC98-4A71-949A-60B9E6F8BB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20ED22A8-AC98-4A71-949A-60B9E6F8BB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

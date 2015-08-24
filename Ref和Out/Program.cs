@@ -6,14 +6,14 @@ namespace Ref和Out
     /// ref传递的参数必须赋值在使用（在外赋值）
     /// out可以只声明不赋值，但是在方法体内必须赋值（在内赋值）
     /// </summary>
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
-            int[] arr = { 56, 31, 2, 89, 76 };
+            int[] arr = {56, 31, 2, 89, 76};
             int sum = 0, max = 0, min = 0;
 
-            int[] arr2 = { };
+            int[] arr2 = {};
             int sum2, max2, min2;
 
             GetValueRef(arr, ref sum, ref max, ref min);
@@ -48,7 +48,7 @@ namespace Ref和Out
         public static void GetValueOut(int[] arr, out int sum, out int max, out int min)
         {
             if (arr == null) throw new ArgumentNullException("arr");
-            arr = new[] { 56, 31, 2, 89, 76 };
+            arr = new[] {56, 31, 2, 89, 76};
             sum = 0;
             max = arr[0];
             min = arr[0];

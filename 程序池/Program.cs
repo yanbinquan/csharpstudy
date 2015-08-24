@@ -11,9 +11,10 @@ namespace 程序池
             new AutoResetEvent(false),
             new AutoResetEvent(false)
         };
+
         private static readonly AutoResetEvent AutoReset = new AutoResetEvent(false);
 
-        public static List<int> Listint = new List<int> { 1, 2, 3, 4, 5, 6 };
+        public static List<int> Listint = new List<int> {1, 2, 3, 4, 5, 6};
 
         private static void Main()
         {
@@ -30,12 +31,12 @@ namespace 程序池
         }
 
         private static readonly Object ThisLock = new object();
-        static Random r = new Random();
+        private static Random r = new Random();
 
         private static void DoTask(Object state)
         {
-            var are = (AutoResetEvent)state;
-            var time = 100 * r.Next(2, 100);
+            var are = (AutoResetEvent) state;
+            var time = 100*r.Next(2, 100);
             Console.WriteLine("Performing a task for {0} milliseconds.", time);
             //Thread.Sleep(time);
             lock (ThisLock)

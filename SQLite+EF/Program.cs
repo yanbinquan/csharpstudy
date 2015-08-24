@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace SQLite_EF
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             var context = new UserContext();
-            var user = new User { Name = "张三" };
-            var ss = context.User.Add(user);
+            var user = new User {Name = "张三"};
+            context.User.Add(user);
             context.SaveChanges();
             var empList = context.User.OrderBy(c => c.Id).ToList();
             Console.WriteLine(empList.Count);

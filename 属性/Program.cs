@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace 属性
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var student = new Student();
             student.Id = 3;
@@ -20,9 +17,10 @@ namespace 属性
         }
     }
 
-    class Student
+    internal class Student
     {
         private int _id;
+
         public int Id
         {
             get { return _id + 100; }

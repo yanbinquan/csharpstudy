@@ -4,13 +4,13 @@ using System.Threading;
 
 namespace 线程锁
 {
-    class Program
+    internal class Program
     {
         private static readonly AutoResetEvent AutoReset = new AutoResetEvent(false);
-        static int _countNum;                        //计数器
-        static readonly object Lockobj = new object();           //静态锁对象
+        private static int _countNum; //计数器
+        private static readonly object Lockobj = new object(); //静态锁对象
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // test AutoResetEvent and Lock object or static object begin
             var thread1 = new Thread(Wirte1);
@@ -34,9 +34,9 @@ namespace 线程锁
             Console.ReadLine();
         }
 
-        public static List<int> Listint = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        public static List<int> Listint = new List<int> {1, 2, 3, 4, 5, 6, 7, 8};
         private static int selectindex = 0;
-        static Random rn = new Random();
+        private static Random rn = new Random();
 
         public static void Wirte1(object index)
         {
@@ -45,7 +45,7 @@ namespace 线程锁
             while (selectindex < Listint.Count)
             {
                 int tt;
-                lock (Lockobj)              //锁定后只有一个线程进入直至块内代码执行完
+                lock (Lockobj) //锁定后只有一个线程进入直至块内代码执行完
                 {
                     if (selectindex >= Listint.Count) continue;
                     tt = Listint[selectindex];
@@ -56,6 +56,7 @@ namespace 线程锁
             }
             AutoReset.Set();
         }
+
         public static void Wirte2(object index)
         {
             var isrealse = false;
@@ -66,7 +67,7 @@ namespace 线程锁
                 {
                     if (isrealse)
                     {
-                        Monitor.Wait(Lockobj);                  //阻塞当前线程
+                        Monitor.Wait(Lockobj); //阻塞当前线程
                     }
                     Console.WriteLine(_countNum + " index:" + index);
                     Thread.Sleep(500);
@@ -74,7 +75,7 @@ namespace 线程锁
                     _countNum++;
                     if (_countNum > 5)
                     {
-                        Monitor.PulseAll(Lockobj);              //取消阻塞，并且当前lock无效
+                        Monitor.PulseAll(Lockobj); //取消阻塞，并且当前lock无效
                     }
                     if (_countNum > 7)
                     {
@@ -83,6 +84,7 @@ namespace 线程锁
                 }
             }
         }
+
         public static void Wirte3()
         {
             for (var i = 0; i < 10; i++)
@@ -91,6 +93,7 @@ namespace 线程锁
                 Thread.Sleep(500);
             }
         }
+
         public static void Wirte4()
         {
             lock (Lockobj)
@@ -101,7 +104,7 @@ namespace 线程锁
                     Thread.Sleep(500);
                     if (i > 5)
                     {
-                        AutoReset.Set();        //置信号为true，阻塞的线程可以运行
+                        AutoReset.Set(); //置信号为true，阻塞的线程可以运行
                     }
                 }
             }

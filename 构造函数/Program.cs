@@ -22,7 +22,7 @@ namespace 构造函数
             Console.WriteLine("age=" + age);
         }
 
-        public Person(int age, string name): this(age)
+        public Person(int age, string name) : this(age)
         {
             age += 1;
             Console.WriteLine("age=" + age + ";name=" + name);

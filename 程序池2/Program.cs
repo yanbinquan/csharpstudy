@@ -3,12 +3,16 @@ using System.Threading;
 
 namespace 程序池2
 {
-    class Program
+    internal class Program
     {
         private readonly int _n;
         private readonly ManualResetEvent _doneEvent;
 
-        public int N { get { return _n; } }
+        public int N
+        {
+            get { return _n; }
+        }
+
         public int FibOfN { get; private set; }
 
         // Constructor.
@@ -21,7 +25,7 @@ namespace 程序池2
         // Wrapper method for use with thread pool.
         public void ThreadPoolCallback(Object threadContext)
         {
-            var threadIndex = (int)threadContext;
+            var threadIndex = (int) threadContext;
             Console.WriteLine("线程 {0} 开始...", threadIndex);
             FibOfN = Calculate(_n);
             Console.WriteLine("线程 {0} 计算...", threadIndex);
@@ -35,7 +39,7 @@ namespace 程序池2
             return Calculate(n - 1) + Calculate(n - 2);
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             const int fibonacciCalculations = 10;
 

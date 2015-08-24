@@ -57,7 +57,7 @@ namespace 原型模式
         public override MonkeyKingPrototype Clone()
         {
             // 调用MemberwiseClone方法实现的是浅拷贝，另外还有深拷贝
-            return (MonkeyKingPrototype)MemberwiseClone();
+            return (MonkeyKingPrototype) MemberwiseClone();
         }
     }
 }
