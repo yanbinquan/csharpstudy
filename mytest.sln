@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "单例", "单例\单例.csproj", "{3A9A0537-B858-46E8-BD66-F74D2F4B8878}"
 EndProject
@@ -62,6 +62,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "生成动态查询", "生成动态查询\生成动态查询.csproj", "{20ED22A8-AC98-4A71-949A-60B9E6F8BB17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "枚举与位运算", "枚举与位运算\枚举与位运算.csproj", "{258DEBB3-3820-4038-A85E-4A5CF63A22B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Areas", "MVC\Areas\Areas.csproj", "{A213B784-709C-4720-A9A4-296E7ABBCAAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +159,10 @@ Global
 		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{258DEBB3-3820-4038-A85E-4A5CF63A22B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A213B784-709C-4720-A9A4-296E7ABBCAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A213B784-709C-4720-A9A4-296E7ABBCAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A213B784-709C-4720-A9A4-296E7ABBCAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A213B784-709C-4720-A9A4-296E7ABBCAAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,5 +180,6 @@ Global
 		{167D71BD-C035-4E79-9F55-B7D6F3CF291C} = {0C49DA49-5FE7-4D65-B147-389CBCC70474}
 		{26BA01D5-80DB-487B-985F-D578FC0C9EC0} = {0C49DA49-5FE7-4D65-B147-389CBCC70474}
 		{20ED22A8-AC98-4A71-949A-60B9E6F8BB17} = {F2AE7894-8FE9-4572-A825-FAC9211513D9}
+		{A213B784-709C-4720-A9A4-296E7ABBCAAF} = {8426DC4E-5FE4-4EFE-B4DB-3ACC08DC27A4}
 	EndGlobalSection
 EndGlobal
